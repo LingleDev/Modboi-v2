@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "discord.js": "latest",
+    "mongoose": "latest",
+    "snekfetch": "latest",
+    "ffmpeg": "latest",
+    "ffmpeg-binaries": "latest",
+    "ytdl-core": "latest",
+    "youtube-info": "latest"
+  }
+}
