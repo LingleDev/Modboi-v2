@@ -5,7 +5,10 @@ const bot = new discord.Client()
 const mongoose = require('mongoose')
 const prefix = "m;"
 var isUbl;
-mongoose.connect(`mongodb+srv://Modboi_v2:${process.env.mdb_key}@modboi-v2-blqz3.gcp.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true })
+console.log("[STARTUP] Connecting to database...")
+setTimeout(() => {
+  mongoose.connect(`mongodb+srv://Modboi_v2:${process.env.mdb_key}@modboi-v2-blqz3.gcp.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true })
+}, 2000)
 bot.commands = new Map()
 bot.invite = "https://discordapp.com/api/oauth2/authorize?client_id=534527805736878099&permissions=8&redirect_uri=https%3A%2F%2Fbot.modboi.ml%2Fhome&scope=bot guilds"
 bot.owner = "242734840829575169"
@@ -23,6 +26,11 @@ require('fs').readdir("./commands/", (err, files) => {
 bot.on('ready', () => {
   console.log("[READY] Modboi is ready for action!");
   bot.base = bot.guilds.get("442067917979385859");
+  
+  bot.user.setActivity("Loading Modboi...", {type: 'STREAMING', url: "https://twitch.tv/freakinghulk"})
+  setTimeout(() => {
+    bot.user.setActivity(`for ${prefix}help | ${bot.guilds.size} servers`, {type: "WATCHING"})
+  }, 10000)
   
   bot.guilds.forEach((g,i) => {
     console.log(`[GUILD LISTINGS] Guild Name: ${g.name}   Guild ID: ${i}   Member Count: ${g.memberCount}\n`)
