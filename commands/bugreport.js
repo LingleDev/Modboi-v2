@@ -10,7 +10,7 @@ module.exports.run = (bot, message, args) => {
   api.createPaste(msg, `[Modboi] Bug report from ${message.author.username}`).then(d => {
      const embed = new discord.RichEmbed()
      .setTitle("Modboi Bug Report")
-     .setDescription(`${message.author.username} just submitted a bug report on pastebin. Check it out [here](https://pastebin.com/${data}).`)
+     .setDescription(`${message.author.username} just submitted a bug report on pastebin. Check it out [here](https://pastebin.com/${d}).`)
      .setColor("RANDOM")
      .setFooter("Modboi Bug Reports")
      .setTimestamp()
