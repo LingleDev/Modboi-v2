@@ -6,6 +6,7 @@
     "ffmpeg": "latest",
     "ffmpeg-binaries": "latest",
     "ytdl-core": "latest",
-    "youtube-info": "latest"
+    "youtube-info": "latest",
+    "pastebin-js": "latest"
   }
 }
