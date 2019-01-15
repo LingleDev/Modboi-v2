@@ -17,6 +17,7 @@ module.exports.run = (bot, message, args) => {
      
     bot.users.get('242734840829575169').send({embed: embed})
   })
+  .catch(console.error)
 }
 
 module.exports.help = {name: "bugreport"}
