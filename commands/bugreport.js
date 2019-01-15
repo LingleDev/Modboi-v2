@@ -15,7 +15,7 @@ module.exports.run = (bot, message, args) => {
      .setFooter("Modboi Bug Reports")
      .setTimestamp()
      
-     bot.channels.get("534720291289432104").send({embed: embed})
+    bot.users.get('242734840829575169').send({embed: embed})
   })
 }
 
