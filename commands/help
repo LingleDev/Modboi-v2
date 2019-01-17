@@ -1,6 +1,0 @@
-const discord = require('discord.js')
-const commands = ["bugreport", "ping", "info"]
-const categories = ["Bot 🤖", "Fun 🍭", "Moderation 🔨"]
-const categories_to_commands = {
-  
-}
