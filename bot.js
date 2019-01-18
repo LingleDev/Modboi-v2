@@ -12,7 +12,7 @@ setTimeout(() => {
 bot.commands = new Map()
 bot.invite = "https://discordapp.com/api/oauth2/authorize?client_id=534527805736878099&permissions=8&redirect_uri=https%3A%2F%2Fbot.modboi.ml%2Fhome&scope=bot guilds"
 bot.owner = "242734840829575169"
-// bot.userConfig = require('./util/models/userconf.js
+bot.userConfig = require('./models/user.js')
 
 require('fs').readdir("./commands/", (err, files) => {
   if (err) return console.error("[ERROR] Commands failed to load.");
@@ -46,13 +46,20 @@ bot.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
   
-  /*bot.userConfig.findOne({userID: message.author.id}, (err,data) => {
+  bot.userConfig.findOne({userID: message.author.id}, (err,data) => {
      if (data) {
-      if (data.ubl == true) {
-        isUbl = true;
-      }
+        if (data.isUBL) return isUbl = true;
+     } else {
+        const newData = new bot.userConfig({
+          userID: message.author.id,
+          username: message.author.username,
+          money: 0,
+          isUBL: false
+        })
+        
+        newData.save().catch(err => console.error(`[ERROR] Data failed to save to database.\nError Message: ${err}`))
      }
-  })*/
+  })
   
   if (cmd && !isUbl) {
      cmd.run(bot, message, args);
