@@ -5,7 +5,7 @@ const categories = ["Moderation", "Fun", "Bot", "Music"]
 module.exports.run = (bot, message, args) => {
   const msg = args.join(" ");
   
-  for (const cmds in bot.commands) {
+  for (const cmds of bot.commands) {
     console.log(cmds)
   }
   
