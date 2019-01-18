@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args) => {
   const reason = args.slice(1).join(" ") || null
   if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Invalid permissions!");
   if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send("I can't kick people. Make sure I have the Kick Members permission.");
-  if (!member.bannable) return message.channel.send(`${member.displayName} is not bannable.`);
+  if (!member.kickable) return message.channel.send(`${member.displayName} is not kickable.`);
   
   member.kick(reason)
   .then(m => {
