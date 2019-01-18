@@ -63,22 +63,23 @@ const getUrlParams = function(url) {
 const ref = getUrlParams().ref
 if (ref) {
   if (ref == "dbl") {
-    alert("Hey! Thanks for checking out Modboi on Discord Bot List!");
+    alert("Hey! Thanks for checking out Modboi v2 on Discord Bot List!");
     localStorage.setItem("dbl", true)
     localStorage.setItem("dbs", false)
     localStorage.setItem("bfd", false)
     document.location.href="https://bot.modboi.ml/v2/home"
   } else if (ref == "dbs") {
-    alert("Hey! Thanks for checking out Modboi on Discord Boats!")
+    alert("Hey! Thanks for checking out Modboi v2 on Discord Boats!")
     localStorage.setItem("dbs", true)
     localStorage.setItem("dbl", false)
     localStorage.setItem("bfd", false)
     document.location.href='https://bot.modboi.ml/v2/home'
   } else if (ref == "bfd") {
-    alert("Hey! Thanks for checking out Modboi on Bots for Discord!")
+    alert("Hey! Thanks for checking out Modboi v2 on Bots for Discord!")
     localStorage.setItem("bfd", true)
     localStorage.setItem("dbl", false)
     localStorage.setItem("dbs", false)
+    document.location.href="https://bot.modboi.ml/v2/home"
   }
 }
 
