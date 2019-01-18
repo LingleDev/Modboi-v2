@@ -6,9 +6,10 @@ module.exports.run = (bot, message, args) => {
   const msg = args.join(" ");
   
   if (categories.includes(msg)) {
-    const em = new discord.RichEmbed()
-    .addField("Modboi v2 Help Menu", `Category: ${msg}\nCommands in this category: ${bot.commands.filter(c => c.help.category == msg)}`, true)
-    message.channel.send({embed: em})
+    var cmd;
+    bot.commands.forEach((v,k) => {
+      
+    })
    } else {
     const cmd = bot.commands.get(msg)
     
