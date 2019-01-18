@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     await member.ban(reason || null)
           .then(member => {
             const em = new discord.RichEmbed()
-            .addField("Modboi Ban System", `<:ban:344784435012435969> ${member.user.username} is outta here!`)
+            .addField("Modboi Ban System", `🔨 ${member.user.username} is outta here!`)
             .setFooter(`${member.user.username} was banned by ${msgmember.displayName}.`)
             .setTimestamp()
             .setColor("GREEN");
