@@ -57,7 +57,7 @@ module.exports.run = (bot, message, args) => {
     if (msg == categories[0]) {
       const em = new discord.RichEmbed()
       .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[0]}.`)
-      .addField(`Commands`, `**${cat_com.moderation.join("\n")}**`, true)
+      .addField(`Commands`, `**${cat_com.moderation.join("\n\n")}**`, true)
       .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED ARE COMPLETE.")
       .setTimestamp()
       .setColor("RANDOM")
