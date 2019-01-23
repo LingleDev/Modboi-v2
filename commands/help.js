@@ -43,6 +43,16 @@ const categories = ["Moderation", "Fun", "Bot", "Role Management", "Music"]
 module.exports.run = (bot, message, args) => {
   const msg = args.join(" ");
   
+  if (!msg) {
+    const em = new discord.RichEmbed()
+    .addField(`Modboi v2 Help`, `This is a list of my command categories.`)
+    .addField(`Categories`, `${category_displaynames.join("\n")}`, true)
+    .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED IN THE HELP MENU ARE COMPLETE.")
+    .setTimestamp()
+    .setColor("RANDOM")
+    message.channel.send({embed: em});
+  }
+  
   if (categories.includes(msg) || categories.includes(msg.toLowerCase())) {
     if (msg == categories[0]) {
       const em = new discord.RichEmbed()
