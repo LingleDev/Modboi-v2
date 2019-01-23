@@ -25,6 +25,7 @@ require('fs').readdir("./commands/", (err, files) => {
 
 
 bot.on('ready', () => {
+  bot.log(bot, `[LOGGER] ${bot.user.username} started up.`, bot.user.avatarURL)
   console.log("[READY] Modboi is ready for action!");
   bot.base = bot.guilds.get("442067917979385859");
   
