@@ -13,6 +13,7 @@ bot.commands = new Map()
 bot.invite = "https://discordapp.com/api/oauth2/authorize?client_id=534527805736878099&permissions=8&redirect_uri=https%3A%2F%2Fbot.modboi.ml%2Fhome&scope=bot guilds"
 bot.owner = "242734840829575169"
 bot.userConfig = require('./models/user.js')
+bot.log = require('./logger.js')
 
 require('fs').readdir("./commands/", (err, files) => {
   if (err) return console.error("[ERROR] Commands failed to load.");
@@ -62,6 +63,8 @@ bot.on('message', message => {
   })
   
   if (cmd && !isUbl) {
+     console.log(`${message.author.username} just used the ${cmd_name} command.`);
+     bot.log(bot, ``, bot.user.avatarURL)
      cmd.run(bot, message, args);
   }
 })
