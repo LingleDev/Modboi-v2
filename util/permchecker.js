@@ -1,4 +1,4 @@
-class PermChecker {
+module.exports = class PermChecker {
   constructor(member) {
     this.member = member
   }
