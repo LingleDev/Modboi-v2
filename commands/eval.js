@@ -7,10 +7,10 @@ module.exports.run = (bot, message, args) => {
 
   return result.then(output => {
     if (typeof output !== 'string') output = require('util').inspect(output, { depth: 0 });
-    if (output.includes(bot.token)) output = output.replace(bot.token, 'Not for your eyes');
+    if (output.includes(bot.token)) output = output.replace(bot.token, 'Nice try.');
     
     const em = new Discord.RichEmbed()
-    .addField("Eval returned:", "```"+output+"```")
+    .addField("Eval returned:", "```js\n"+output+"```")
     .setTimestamp()
     .setColor("GREEN")
     .setFooter("Eval")
@@ -20,10 +20,10 @@ module.exports.run = (bot, message, args) => {
     console.error(err);
     err = err.toString();
 
-    if (err.includes(bot.token)) err = err.replace(bot.token, 'Not for your eyes');
+    if (err.includes(bot.token)) err = err.replace(bot.token, 'Nice try.');
 
     const em = new discord.RichEmbed()
-    .addField("Eval returned:", "```"+err+"```")
+    .addField("Eval returned:", "```js\n"+err+"```")
     .setTimestamp()
     .setColor("RED")
     .setFooter("Eval")
