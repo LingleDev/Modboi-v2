@@ -47,7 +47,7 @@ module.exports.run = (bot, message, args) => {
     if (msg == categories[0]) {
       const em = new discord.RichEmbed()
       .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[0]}.`)
-      .addField(`Commands`, `${cat_com.moderation.join("\n")}`, true)
+      .addField(`Commands`, `**${cat_com.moderation.join("\n")}**`, true)
       .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED ARE COMPLETE.")
       .setTimestamp()
       .setColor("RANDOM")
@@ -57,7 +57,7 @@ module.exports.run = (bot, message, args) => {
     if (msg == categories[1]) {
       const em = new discord.RichEmbed()
       .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[1]}.`)
-      .addField(`Commands`, `${cat_com.fun.join("\n")}`, true)
+      .addField(`Commands`, `**${cat_com.fun.join("\n")}**`, true)
       .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED ARE COMPLETE.")
       .setTimestamp()
       .setColor("RANDOM")
@@ -66,8 +66,8 @@ module.exports.run = (bot, message, args) => {
     
     if (msg == categories[2]) {
       const em = new discord.RichEmbed()
-      .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[2]}`, true)
-      .addField(`Commands`, `${cat_com.bot.join("\n")}`, true)
+      .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[2]}`)
+      .addField(`Commands`, `**${cat_com.bot.join("\n")}**`, true)
       .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED ARE COMPLETE.")
       .setTimestamp()
       .setColor("RANDOM")
@@ -76,8 +76,8 @@ module.exports.run = (bot, message, args) => {
     
     if (msg == categories[3]) {
       const em = new discord.RichEmbed()
-      .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[3]}`, true)
-      .addField(`Commands`, `${cat_com.role_mgmt.join("\n")}`, true)
+      .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[3]}`)
+      .addField(`Commands`, `**${cat_com.role_mgmt.join("\n")}**`, true)
       .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED ARE COMPLETE.")
       .setTimestamp()
       .setColor("RANDOM")
@@ -86,8 +86,8 @@ module.exports.run = (bot, message, args) => {
     
     if (msg == categories[4]) {
       const em = new discord.RichEmbed()
-      .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[4]}`, true)
-      .addField(`Commands`, `${cat_com.music.join("\n")}`, true)
+      .addField(`Modboi v2 Help`, `This is a list of my commands in the category ${category_displaynames[4]}`)
+      .addField(`Commands`, `**${cat_com.music.join("\n")}**`, true)
       .setFooter("PLEASE NOTE THAT NOT ALL OF THE COMMANDS LISTED ARE COMPLETE.")
       .setTimestamp()
       .setColor("RANDOM")
