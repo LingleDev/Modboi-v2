@@ -10,7 +10,7 @@ module.exports.run = (bot, message, args) => {
     if (output.includes(bot.token)) output = output.replace(bot.token, 'Not for your eyes');
     
     const em = new Discord.RichEmbed()
-    .addField("Eval returned:\n```"+output+"```")
+    .addField("Eval returned:", "```"+output+"```")
     .setTimestamp()
     .setColor("GREEN")
     .setFooter("Eval")
@@ -23,7 +23,7 @@ module.exports.run = (bot, message, args) => {
     if (err.includes(bot.token)) err = err.replace(bot.token, 'Not for your eyes');
 
     const em = new discord.RichEmbed()
-    .addField("Eval returned:\n```"+err+"```")
+    .addField("Eval returned:", "```"+err+"```")
     .setTimestamp()
     .setColor("RED")
     .setFooter("Eval")
