@@ -23,10 +23,21 @@ require('fs').readdir("./commands/", (err, files) => {
   })
 })
 
+process.on('unhandledRejection', () => {
+  console.error(`[ERROR] Caught an unhandledRejection.\n`)
+})
+
+process.on('uncaughtException', () => {
+  console.error(`[ERROR] Caught an uncaughtException.`)
+})
+
+bot.on('error', () => {
+  console.error(`[ERROR] Caught a bot error.`)
+})
 
 bot.on('ready', () => {
   bot.log(bot, `[LOGGER] ${bot.user.username} started up.`, bot.user.avatarURL)
-  console.log("[READY] Modboi is ready for action!");
+  console.log("[READY] Modboi v2 is ready for action!");
   bot.base = bot.guilds.get("442067917979385859");
   
   bot.user.setActivity("Loading Modboi...", {type: 'STREAMING', url: "https://twitch.tv/freakinghulk"})
