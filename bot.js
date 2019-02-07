@@ -42,7 +42,9 @@ bot.on('ready', () => {
   
   bot.user.setActivity("Loading Modboi...", {type: 'STREAMING', url: "https://twitch.tv/freakinghulk"})
   setTimeout(() => {
-    bot.user.setActivity(`for ${prefix}help | ${bot.guilds.size} servers`, {type: "WATCHING"})
+    //bot.user.setActivity(`for ${prefix}help | ${bot.guilds.size} servers`, {type: "WATCHING"})
+    bot.user.setStatus("dnd")
+    bot.user.setActivity(`UPDATES! (I won't respond to commands until the updates are finished.)`)
   }, 10000)
   
   bot.guilds.forEach((g,i) => {
@@ -75,9 +77,9 @@ bot.on('message', message => {
   })
   
   if (cmd && !isUbl) {
-     console.log(`${message.author.username} just used the ${cmd_name} command.`);
-     bot.log(bot, `[LOGGER] ${message.author.username} just used the ${cmd_name} command.`, bot.user.avatarURL)
-     cmd.run(bot, message, args);
+    //console.log(`${message.author.username} just used the ${cmd_name} command.`);
+    //bot.log(bot, `[LOGGER] ${message.author.username} just used the ${cmd_name} command.`, bot.user.avatarURL)
+    //cmd.run(bot, message, args);
   }
 })
 
