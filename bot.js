@@ -77,9 +77,9 @@ bot.on('message', message => {
   })
   
   if (cmd && !isUbl) {
-    //console.log(`${message.author.username} just used the ${cmd_name} command.`);
-    //bot.log(bot, `[LOGGER] ${message.author.username} just used the ${cmd_name} command.`, bot.user.avatarURL)
-    //cmd.run(bot, message, args);
+    console.log(`${message.author.username} just used the ${cmd_name} command.`);
+    bot.log(bot, `[LOGGER] ${message.author.username} just used the ${cmd_name} command.`, bot.user.avatarURL)
+    cmd.run(bot, message, args);
   }
 })
 
