@@ -42,9 +42,10 @@ bot.on('ready', () => {
   
   bot.user.setActivity("Loading Modboi...", {type: 'STREAMING', url: "https://twitch.tv/freakinghulk"})
   setTimeout(() => {
-    //bot.user.setActivity(`for ${prefix}help | ${bot.guilds.size} servers`, {type: "WATCHING"})
-    bot.user.setStatus("dnd")
-    bot.user.setActivity(`UPDATES! (I won't respond to commands until the updates are finished.)`)
+    bot.user.setActivity(`for ${prefix}help | ${bot.guilds.size} servers`, {type: "WATCHING"})
+    /* bot.user.setStatus("dnd")
+      bot.user.setActivity(`UPDATES! (I won't respond to commands until the updates are finished.)`)
+    */
   }, 10000)
   
   bot.guilds.forEach((g,i) => {
