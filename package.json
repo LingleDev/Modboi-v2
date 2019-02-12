@@ -7,6 +7,11 @@
     "ffmpeg-binaries": "latest",
     "ytdl-core": "latest",
     "youtube-info": "latest",
-    "pastebin-js": "latest"
+    "pastebin-js": "latest",
+    "zlib-sync": "latest",
+    "discordapp/erlpack": "latest",
+    "sodium": "latest",
+    "libsodium-wrappers": "latest",
+    "@discordjs/uws": "latest"
   }
 }
