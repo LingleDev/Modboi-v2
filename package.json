@@ -9,7 +9,7 @@
     "youtube-info": "latest",
     "pastebin-js": "latest",
     "zlib-sync": "latest",
-    "@discordapp/erlpack": "latest",
+    "erlpack": "latest",
     "sodium": "latest",
     "libsodium-wrappers": "latest",
     "@discordjs/uws": "latest"
