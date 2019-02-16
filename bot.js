@@ -36,6 +36,7 @@ bot.on('error', () => {
 })
 
 bot.on('ready', () => {
+  require('./modules.js').AutoPoster(bot)
   bot.log(bot, `[LOGGER] ${bot.user.username} started up.`, bot.user.avatarURL)
   console.log("[READY] Modboi v2 is ready for action!");
   bot.base = bot.guilds.get("442067917979385859");
