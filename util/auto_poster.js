@@ -1,7 +1,7 @@
 const snekfetch = require('snekfetch')
 
 module.exports = async (bot) => {
-  const dtok = process.env.db_auth
+  const dtok = process.env.dbl_key
   
   function postStats() {
     snekfetch.post('https://discordbots.org/api/bots/stats')
