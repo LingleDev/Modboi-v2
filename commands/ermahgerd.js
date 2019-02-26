@@ -11,5 +11,6 @@ module.exports.run = (bot, message, args) => {
   .addField("Translation:", translation, false)
   .setTimestamp()
   .setFooter("ERMAHGERD")
+  .setColor("GREEN");
   message.channel.send({embed: em})
 }
