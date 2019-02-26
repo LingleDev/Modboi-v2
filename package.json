@@ -12,6 +12,7 @@
     "erlpack": "latest",
     "sodium": "latest",
     "libsodium-wrappers": "latest",
-    "@discordjs/uws": "latest"
+    "@discordjs/uws": "latest",
+    "node-ermahgerd": "latest"
   }
 }
