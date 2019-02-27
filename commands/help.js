@@ -20,7 +20,8 @@ const cat_com = {
     "8ball",
     "meme",
     "chuck_norris",
-    "yo_momma"
+    "yo_momma",
+    "ermahgerd"
   ],
   bot: [
     "ping",
