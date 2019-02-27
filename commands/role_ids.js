@@ -4,7 +4,7 @@ module.exports.run = (bot, message, args) => {
   const roles = message.guild.roles
   var link;
   
-  roles.forEach((i,r) => {
+  roles.forEach((r,i) => {
     api.createPaste(`Role ID: ${i} Role Name: ${r.name}\n`, `Roles for ${message.guild.name}` ).then(d => {
       link = d
     })
