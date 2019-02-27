@@ -8,7 +8,7 @@ const cat_com = {
     "softban",
     "tempban",
     "hackban",
-    "purge"
+    "mute"
   ],
   role_mgmt: [
     "addrole",
