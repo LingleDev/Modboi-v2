@@ -8,6 +8,9 @@ var isUbl;
 console.log("[STARTUP] Connecting to database...")
 setTimeout(() => {
   mongoose.connect(`mongodb+srv://Modboi_v2:${process.env.mdb_key}@modboi-v2-blqz3.gcp.mongodb.net/test?retryWrites=true`, { useNewUrlParser: true })
+  .then(() => {
+    console.log("[STARTUP] Connected to MongoDB!")
+  })
 }, 2000)
 bot.commands = new Map()
 bot.invite = "https://discordapp.com/api/oauth2/authorize?client_id=534527805736878099&permissions=8&redirect_uri=https%3A%2F%2Fbot.modboi.ml%2Fhome&scope=bot guilds"
