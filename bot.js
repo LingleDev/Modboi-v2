@@ -89,6 +89,14 @@ bot.on('message', message => {
   }
 })
 
+bot.on('guildCreate', guild => {
+  bot.user.setActivity(`for m;help | ${bot.guilds.size} servers`, {type: "WATCHING"})
+})
+
+bot.on('guildDelete', guild => {
+  bot.user.setActivity(`for m;help | ${bot.guilds.size} servers`, {type: "WATCHING"})
+})
+
 
 
 bot.login(process.env.token)
