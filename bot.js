@@ -101,6 +101,8 @@ bot.on('guildCreate', guild => {
 bot.on('guildDelete', guild => {
   bot.user.setActivity(`for m;help | ${bot.guilds.size} servers`, {type: "WATCHING"})
 })
+    
+bot.on('guildBanAdd', (guild, user) => require('./events/guildBanAdd')(bot,guild,user))
 
 
 
