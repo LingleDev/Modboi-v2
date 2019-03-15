@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
   await member.ban(reason)
         .then(member => {
           guild.findOne({ guildId: message.guild.id }, (err,data) => {
-            if (!data) {
+            if (!data || null) {
               const newData = new guild({
                 guildId: message.guild.id,
                 guildName: message.guild.name,
