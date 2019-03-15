@@ -1,4 +1,4 @@
-const guild = require(`./modules`).GuildSettings
+const guild = require(`../modules`).GuildSettings
 
 module.exports.run = (bot, message, args) => {
   const channel = message.mentions.channels.first();
