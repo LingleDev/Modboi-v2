@@ -1,6 +1,7 @@
 console.log("[STARTUP] Modboi starting up...")
 
 const discord = require('discord.js')
+global.embed = discord.RichEmbed
 const bot = new discord.Client()
 const mongoose = require('mongoose')
 const prefix = "m;"
@@ -18,6 +19,10 @@ bot.owner = "242734840829575169"
 bot.userConfig = require('./models/user')
 bot.guildConfig = require(`./models/guild`)
 bot.log = require('./logger.js').baselogger
+bot.errors = {
+  dbSaveError: `[ERROR] Data failed to save to database.\nError Message: %s`,
+  dbConnectError: `[ERROR] Failed to connect to database. \nError Message: %s`
+}
 
 require('fs').readdir("./commands/", (err, files) => {
   if (err) return console.error("[ERROR] Commands failed to load.");
@@ -78,7 +83,7 @@ bot.on('message', message => {
           isUBL: false
         })
         
-        newData.save().catch(err => console.error(`[ERROR] Data failed to save to database.\nError Message: ${err}`))
+        newData.save().catch(err => console.error(bot.errors.dbSaveError.replace("%s", err))
      }
   })
   
