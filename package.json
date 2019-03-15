@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "discord.js": "11.4-dev",
+    "discord.js": "discordjs/discord.js#11.4-dev" ,
     "mongoose": "latest",
     "snekfetch": "latest",
     "ffmpeg": "latest",
