@@ -2,7 +2,8 @@ module.exports.run = (bot, message, args) => {
   const inv = bot.invite
   
   const em = new (require('discord.js').RichEmbed)()
-  .addField("Modboi v2 Invite", ``, false)
+  .setTitle("Modboi v2 Invite")
+  .setDescription(`I can't use invite links! [Here](${inv})'s my invite link!`)
   .setTimestamp()
   .setColor("GREEN");
   message.channel.send({embed: em})
