@@ -16,10 +16,10 @@ module.exports = (bot, guild, user) => {
       } else {
         c = guild.channels.find(c => c.name == "modlog")
       }
-      
-      r = data.bans[user.id].reason
-      m = guild.members.get(data.bans[user.id].moderator)
     }
+    
+    r = data.bans[user.id].reason
+    m = guild.members.get(data.bans[user.id].moderator)
   })
   
   const em = new embed()
