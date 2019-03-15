@@ -32,12 +32,14 @@ require('fs').readdir("./commands/", (err, files) => {
   })
 })
 
-process.on('unhandledRejection', () => {
+process.on('unhandledRejection', (err) => {
   console.error(`[ERROR] Caught an unhandledRejection.\n`)
+  console.error(err)
 })
 
-process.on('uncaughtException', () => {
+process.on('uncaughtException', (err) => {
   console.error(`[ERROR] Caught an uncaughtException.`)
+  console.error(err)
 })
 
 bot.on('error', () => {
