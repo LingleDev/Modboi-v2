@@ -29,17 +29,11 @@ module.exports.run = async (bot, message, args) => {
                 console.error(bot.errors.dbSaveError.replace("%s", e))
               })
               
-              Object.defineProperty(newData.bans, member.user.id, {
-                value: { moderator: msgmember, reason: reason || null },
-                writable: true 
-              })
+              data.bans[member.user.id] = {moderator: msgmember, reason: reason}
               data.save()
               .catch(e => console.error(bot.errors.dbSaveError.replace("%s", e)))
             } else {
-              Object.defineProperty(data.bans, member.user.id, {
-                value: { moderator: msgmember, reason: reason || null},
-                writable: true
-              })
+              data.bans[member.user.id] = {moderator: msgmember, reason: reason}
               data.save()
               .catch(e => console.error(bot.errors.dbSaveError.replace("%s", e)))
             }
