@@ -22,7 +22,7 @@ module.exports.run = (bot, message, args) => {
 
     if (err.includes(bot.token)) err = err.replace(bot.token, 'Nice try.');
 
-    const em = new discord.RichEmbed()
+    const em = new Discord.RichEmbed()
     .addField("Eval returned:", "```js\n"+err+"```")
     .setTimestamp()
     .setColor("RED")
