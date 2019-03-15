@@ -83,7 +83,7 @@ bot.on('message', message => {
           isUBL: false
         })
         
-        newData.save().catch(err => console.error(bot.errors.dbSaveError.replace("%s", err))
+        newData.save().catch(err => console.error(bot.errors.dbSaveError.replace("%s", err)))
      }
   })
   
