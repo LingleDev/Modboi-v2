@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
   if (!member.bannable) return message.channel.send(`${member.displayName} is not bannable.`);
   await member.ban(reason || null)
         .then(member => {
-          guild.findOrCreate({ guildId: message.guild.id }, (err,data) => {
+          guild.findOne({ guildId: message.guild.id }, (err,data) => {
             if (!data) {
               const newData = new guild({
                 guildId: message.guild.id,
