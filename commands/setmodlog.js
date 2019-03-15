@@ -28,7 +28,7 @@ module.exports.run = (bot, message, args) => {
         message.channel.send({embed: em})
       })
       .catch(e => {
-        console.error(bot.errors.dbSaveError.replace("%s", e)
+        console.error(bot.errors.dbSaveError.replace("%s", e))
         const em = new embed()
         .setTitle("Modboi v2 ModLog Settings")
         .setDescription("I encountered an error while changing the settings! Please submit a bug report with `m;bugreport`.")
