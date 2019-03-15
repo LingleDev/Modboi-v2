@@ -29,11 +29,11 @@ module.exports.run = async (bot, message, args) => {
                 console.error(bot.errors.dbSaveError.replace("%s", e))
               })
               
-              data.bans[member.user.id] = {moderator: msgmember, reason: reason}
+              data.bans[member.user.id] = {moderator: message.author.id, reason: reason}
               data.save()
               .catch(e => console.error(bot.errors.dbSaveError.replace("%s", e)))
             } else {
-              data.bans[member.user.id] = {moderator: msgmember, reason: reason}
+              data.bans[member.user.id] = {moderator: message.author.id, reason: reason}
               data.save()
               .catch(e => console.error(bot.errors.dbSaveError.replace("%s", e)))
             }
