@@ -1,4 +1,5 @@
 const discord = require('discord.js')
+const guild = require('../modules').GuildSettings
 
 module.exports.run = async (bot, message, args) => {
   const member = message.mentions.members.first();
@@ -10,6 +11,40 @@ module.exports.run = async (bot, message, args) => {
   if (!member.bannable) return message.channel.send(`${member.displayName} is not bannable.`);
   await member.ban(reason || null)
         .then(member => {
+          guild.findOne({ guildId: message.guild.id }, (err,data) => {
+            if (!data) {
+              const newData = new guild({
+                guildId: message.guild.id,
+                guildName: message.guild.name,
+                premium: false,
+                blacklist: false,
+                modlog: "",
+                welcome: "",
+                warns: {},
+                bans: {}
+              })
+              
+              newData.save()
+              .catch(e => {
+                console.error(bot.errors.dbSaveError.replace("%s", e))
+              })
+              
+              Object.defineProperty(newData.bans, member.user.id, {
+                value: { moderator: msgmember, reason: reason || null },
+                writable: true 
+              })
+              data.save()
+              .catch(e => console.error(bot.errors.dbSaveError.replace("%s", e)))
+            } else {
+              Object.defineProperty(data.bans, member.user.id, {
+                value: { moderator: msgmember, reason: reason || null},
+                writable: true
+              })
+              data.save()
+              .catch(e => console.error(bot.errors.dbSaveError.replace("%s", e)))
+            }
+          })
+    
           const em = new discord.RichEmbed()
           .addField("Modboi Ban System", `🔨 ${member.user.username} is outta here!`)
           .setFooter(`${member.user.username} was banned by ${msgmember.displayName}.`)
