@@ -18,7 +18,7 @@ module.exports = (bot, guild, user) => {
       }
       
       r = data.bans[user.id].reason
-      m = data.bans[user.id].moderator
+      m = guild.members.get(data.bans[user.id].moderator)
     }
   })
   
