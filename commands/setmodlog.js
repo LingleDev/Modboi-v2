@@ -14,7 +14,8 @@ module.exports.run = (bot, message, args) => {
         blacklist: false,
         modlog: channel.id,
         welcome: null,
-        warns: {}
+        warns: {},
+        bans: {}
       })
       
       newData.save()
