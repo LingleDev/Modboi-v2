@@ -20,8 +20,6 @@ module.exports = (bot, guild, user) => {
     
     r = data.bans[user.id].reason
     m = guild.members.get(data.bans[user.id].moderator)
-    
-    console.log(r,m)
   })
   
   const em = new embed()
@@ -32,5 +30,6 @@ module.exports = (bot, guild, user) => {
   .setTimestamp()
   .setColor("RED")
   .setFooter("Ban Logger", user.avatarURL)
+  console.log(c)
   c.send({embed: em})
 }
