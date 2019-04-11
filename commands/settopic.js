@@ -13,10 +13,10 @@ module.exports.run = (bot, message, args) => {
   
   if (topic !== null) {
     channel.setTopic(topic);
-    embed.setDescription(`<#@${channel.id}>'s topic has been set to ${topic}.`)
+    embed.setDescription(`<#${channel.id}>'s topic has been set to ${topic}.`)
   } else {
     channel.setTopic("");
-    embed.setDescription(`<#@${channel.id}>'s topic has been reset.`)
+    embed.setDescription(`<#${channel.id}>'s topic has been reset.`)
   }
   message.channel.send({embed: embed})
 }
